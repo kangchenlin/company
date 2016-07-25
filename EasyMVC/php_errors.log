@@ -1,0 +1,12 @@
+[21-Jul-2016 08:46:19 UTC] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, null given in /home/ubuntu/workspace/EasyMVC/views/specials.php on line 58
+[21-Jul-2016 08:46:19 UTC] PHP Stack trace:
+[21-Jul-2016 08:46:19 UTC] PHP   1. {main}() /home/ubuntu/workspace/EasyMVC/views/specials.php:0
+[21-Jul-2016 08:46:19 UTC] PHP   2. mysql_num_rows() /home/ubuntu/workspace/EasyMVC/views/specials.php:58
+[21-Jul-2016 08:47:08 UTC] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, null given in /home/ubuntu/workspace/EasyMVC/views/specials.php on line 58
+[21-Jul-2016 08:47:08 UTC] PHP Stack trace:
+[21-Jul-2016 08:47:08 UTC] PHP   1. {main}() /home/ubuntu/workspace/EasyMVC/views/specials.php:0
+[21-Jul-2016 08:47:08 UTC] PHP   2. mysql_num_rows() /home/ubuntu/workspace/EasyMVC/views/specials.php:58
+[21-Jul-2016 08:47:16 UTC] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, null given in /home/ubuntu/workspace/EasyMVC/views/specials.php on line 58
+[21-Jul-2016 08:47:16 UTC] PHP Stack trace:
+[21-Jul-2016 08:47:16 UTC] PHP   1. {main}() /home/ubuntu/workspace/EasyMVC/views/specials.php:0
+[21-Jul-2016 08:47:16 UTC] PHP   2. mysql_num_rows() /home/ubuntu/workspace/EasyMVC/views/specials.php:58
