@@ -11,27 +11,31 @@ require_once("config.php");
 			$result = mysql_query($query);
 			return mysql_fetch_assoc($result);
         }
+        //查詢留言板的內容排序方式按照`ID`由大排到小
+        // function read_new_id($account){
+        //     $sql = "select * from `guest` where `memberID` = '".$account."' order by `ID` desc limit 0,1;";
+        //     $result = mysql_query($sql);
+        //     return mysql_fetch_assoc($result);
+        // }
         //查詢guest裡面的所有資料
         function page(){
                return mysql_query("select * from guest");
-        }
-          
-       //查詢guest資料表的記錄
-       function read_page($start,$number){
-       $data =  mysql_query("select *from guest order by `guestTime` desc limit $start,$number");
+          }
+          //查詢guest資料表的記錄
+          function read_page($start,$number){
+           $data =  mysql_query("select *from guest order by `guestTime` desc limit $start,$number");
            for($i=1;$i<=mysql_num_rows($data);$i++){
-    			$rs=mysql_fetch_assoc($data);
-    			 $dataarray[$i]['ID'] = $rs['ID'];
-    			 $dataarray[$i]['guestSubject'] = $rs['guestSubject'];
-    			 $dataarray[$i]['guestName'] = $rs['guestName'];
-    			 $dataarray[$i]['guestEmail'] = $rs['guestEmail'];
-    			 $dataarray[$i]['guestContent'] = $rs['guestContent'];
-    			 $dataarray[$i]['guestReply'] = $rs['guestReply'];
-    
+				$rs=mysql_fetch_assoc($data);
+				 $dataarray[$i]['ID'] = $rs['ID'];
+				 $dataarray[$i]['guestSubject'] = $rs['guestSubject'];
+				 $dataarray[$i]['guestName'] = $rs['guestName'];
+				 $dataarray[$i]['guestEmail'] = $rs['guestEmail'];
+				 $dataarray[$i]['guestContent'] = $rs['guestContent'];
+				 $dataarray[$i]['guestReply'] = $rs['guestReply'];
+
            }
-            return $dataarray;
-        }
-          
+           return $dataarray;
+          }
         //查詢
         function read_reply($ID){
             $query = "select * from guest where ID='".$ID."'";

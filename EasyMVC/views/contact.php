@@ -19,7 +19,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="h-bg">
 		<div class="total">
 				<div class="header"> 
-						<div class="logo"><a href=""><img src="/EasyMVC/views/images/logo.jpg" alt=""/></a></div>
+						<div class="logo"><a href="index.php"><img src="/EasyMVC/views/images/logo.jpg" alt=""/></a></div>
 						<div class="clear"></div> 
 				</div>	
 		<div class="menu"> 	

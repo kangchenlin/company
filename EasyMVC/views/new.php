@@ -16,7 +16,7 @@
         <div class="h-bg">
             <div class="total">
                  <div class="logo">
-                     <div class="header"><a href=""><img src="/EasyMVC/views/images/logo.jpg" alt="" /></a></div>
+                     <div class="header"><a href="index.php"><img src="/EasyMVC/views/images/logo.jpg" alt="" /></a></div>
                  </div><div class="clear"></div>
                   <div class="menu">
                       <div class="top-nav">

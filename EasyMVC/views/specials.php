@@ -19,7 +19,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<div class="h-bg">
 				<div class="total">
 					<div class="header">
-						<div class="logo"><a href=""><img src="/EasyMVC/views/images/logo.jpg" alt="" /></a></div>
+						<div class="logo"><a href="index.php"><img src="/EasyMVC/views/images/logo.jpg" alt="" /></a></div>
 						<div class="clear"></div>
 					</div>
 					<div class="menu">
@@ -55,11 +55,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 										<div class="text">
 											<div class="grid_1_of_3 images_1_of_3">
 												<div class="grid_1">
-<<<<<<< HEAD
-													<a href="single?ID=<?php echo $rs['ID']?>"><img src="/EasyMVC/<?php echo $rs['filename'] ?>" width="450px" height="300px" onerror="this.src='../views/images/about.jpgg'"></a>
-=======
 													<a href="single?ID=<?php echo $rs['ID']?>"><img src="/EasyMVC/<?php echo $rs['filename'] ?>" width="450px" height="300px" onerror="this.src='../views/images/about.jpg'"></a>
->>>>>>> ee12b8995c31706cddfb952b57c484f69fc45152
 													<div class="grid_desc">
 														<p class="title">
 															<?php echo $rs['maName'] ?>

@@ -1,8 +1,6 @@
 <?php session_start()?>
 <?php
-header('Content-Type: text/html; charset=utf-8');
     class newController extends Controller{
-        //留言板畫面
         function news() {
              $new = $this->model("news");
              $data = $new->page();
@@ -34,6 +32,7 @@ header('Content-Type: text/html; charset=utf-8');
         }
         //新增留言
         function newadd(){
+            header('Content-Type: text/html; charset=utf-8');
             $insert = $this->model("news");
             $ID = $_POST['ID'];
             if (isset($_POST['button'])){  
@@ -46,8 +45,9 @@ header('Content-Type: text/html; charset=utf-8');
                 $guestTime = date("Y:m:d H:i:s");
                 
                 $insert->create_new($username, $memName,$memEmail,$guestSubject,$guestContent,$guestTime);
-                echo '<script>alert("送出成功");</script>';
-                header("Location: news");
+                $a='送出成功';
+    		    $b='<meta http-equiv=REFRESH CONTENT=1;url=https://lab-jennylin.c9users.io/EasyMVC/new/news>';
+    		    $this->message($a,$b);
             }
         }
         //回覆留言頁面
@@ -60,13 +60,19 @@ header('Content-Type: text/html; charset=utf-8');
         //回覆留言
         function replyupdate(){
             $update = $this->model("news");
+            
             if (isset($_POST['button'])){
                 
                 $ID = $_POST["ID"];
                 $guestReply = $_POST["guestReply"];
                 
                 $update->edit_new($ID,$guestReply);
-                header("Location: news");
+                $a='回覆成功';
+    		    $b='<meta http-equiv=REFRESH CONTENT=1;url=https://lab-jennylin.c9users.io/EasyMVC/new/news>';
+    		    $this->message($a,$b);
             }
+        }
+        public function message($a,$b){
+            $this->view("message",Array($a,$b));
         }
     }

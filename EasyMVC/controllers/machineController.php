@@ -1,5 +1,5 @@
 <?php
-header('Content-Type: text/html; charset=utf-8');
+session_start();
     class machineController extends Controller{
         
         //產品畫面
@@ -24,13 +24,17 @@ header('Content-Type: text/html; charset=utf-8');
             $data['pages'] = $pages;
             $data['resultArray'] = $machine->readpage($start,6);
             $this->view("specials",$data);
+    
         }
+        
         //詳細說明
         function single(){
             $machine = $this->model("special");
             $ID = $_GET['ID'];
             $row = $machine->read_machine($ID);
             $this->view("single",$row);
+            var_dump($_SESSION['username']);
+            exit;
         }
         //產品新增畫面
         function machinenew(){
@@ -97,11 +101,13 @@ header('Content-Type: text/html; charset=utf-8');
                 move_uploaded_file($_FILES['uploadfile']['tmp_name'][0],$file1);
                 
                 $update->update_machine($ID,$maName,$maClass,$maExplain,$file1);
-                echo '<script>alert("修改成功");</script>';
-                header("Location: single?ID=$ID");
+                
+                $a = '修改成功';
+                $b = '<meta http-equiv=REFRESH CONTENT=1;url=https://lab-jennylin.c9users.io/EasyMVC/machine/single?ID='.$ID.'>';
+                $this->message($a,$b);
             }
         }
-        //刪除產品
+        //刪除商品
         function machinedelete(){
             $delete= $this->model("special");
             $ID = $_GET['ID'];
@@ -119,6 +125,9 @@ header('Content-Type: text/html; charset=utf-8');
                 $delete->delete_machine($ID);
                 header("Location: special");
             }
+        }
+        public function message($a,$b){
+            $this->view("message",Array($a,$b));
         }
     } 
 ?>

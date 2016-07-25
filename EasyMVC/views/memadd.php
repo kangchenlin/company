@@ -18,15 +18,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<div class="h-bg">
 				<div class="total">
 					<div class="header">
-						<div class="logo"><a href=""><img src="/EasyMVC/views/images/logo.jpg" alt="" /></a></div>
+						<div class="logo"><a href="home"><img src="/EasyMVC/views/images/logo.jpg" alt="" /></a></div>
 						<div class="clear"></div>
 					</div>
 					<div class="menu">
 						<div class="top-nav">
 							<ul>
 								<li><a href="home">Home</a></li>
-								<li><a href="/EasyMVC/machine/special">Specials</a></li>
-								<li><a href="/EasyMVC/new/news">News</a></li>
+								<li><a href="specials">Specials</a></li>
+								<li><a href="new">News</a></li>
 								<li><a href="contact">Contact</a></li>
 								<?php if($_SESSION['username'] == NULL){ ?>
 								<li class="active"><a href="signin">log in</a></li>

@@ -2,9 +2,9 @@
 require_once("config.php");
     class special{
         public function __construct()
-        {
+         {
           $db = new DB();
-        }
+         }
         //新增
         function create_machine($maName,$maClass,$maExplain,$updir,$updir1,$updir2){
             $query = "insert into machine (maName,maClass,filename,maImage,maImage_1,maExplain) values ('".$maName."','".$maClass."','$updir','$updir1','$updir2','".$maExplain."')";

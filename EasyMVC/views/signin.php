@@ -23,7 +23,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="total">
 					<div class="header">
 						<div class="logo">
-							<a href=""><img src="/EasyMVC/views/images/logo.jpg" alt="" /></a>
+							<a href="home"><img src="/EasyMVC/views/images/logo.jpg" alt="" /></a>
 						</div>
 						<div class="clear"></div>
 					</div>

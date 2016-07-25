@@ -1,8 +1,8 @@
 <?php
 session_start();
-header('Content-Type: text/html; charset=utf-8');
+
 class indexController extends Controller {
-    //首頁畫面   
+    //首頁畫面    
     function home() {
         $this->view("index");
     }
@@ -21,16 +21,17 @@ class indexController extends Controller {
             $account = $user->account = $_POST['memAccount'];
             $password = $user->password= $_POST['memPassword'];
             $row = $user->login_check($account);
-            //判斷帳號與密碼是否為空白以及MySQL資料庫裡是否有這個會員
             if($account != null && $password != null && $row[1] == $account && $row[2] == $password){
     	        	//將帳號寫入session，方便驗證使用者身份
     		        $_SESSION['username'] = $account;
     		      //  echo $_SESSION['username'];
-    		        //echo '登入成功!';
-    		        $this->view("index");
+    		        $a='登入成功!';
+    		        $b='<meta http-equiv=REFRESH CONTENT=1;url=https://lab-jennylin.c9users.io/EasyMVC/index/home>';
+    		        $this->message($a,$b);
     		}else{
-    		        echo '登入失敗!';
-    		        $this->view("signin");
+    		        $a='登入失敗!';
+    		        $b='<meta http-equiv=REFRESH CONTENT=1;url=https://lab-jennylin.c9users.io/EasyMVC/index/signin>';
+    		        $this->message($a,$b);
     		}
         }
     }
@@ -38,8 +39,8 @@ class indexController extends Controller {
     function logout(){
         $user = $this->model("login");
         $user->logout();
-        header("Location:signin");
-
+        $this->view("signin");
+        //header("Location:signin");
     }
     //註冊畫面
     function register(){
@@ -62,14 +63,19 @@ class indexController extends Controller {
             $RegTime = date("Y-m-d"); 
             
             if($row>0){
-            	echo '<script>alert("帳號重複")</script>';
-            	$this->view("memadd");
+                $a='帳號重複!';
+    		    $b='<meta http-equiv=REFRESH CONTENT=1;url=https://lab-jennylin.c9users.io/EasyMVC/index/memadd>';
+    		    $this->message($a,$b);
             }else{
                 $member->create_register($memName,$memAccount,$memPassword,$memPasswordC,$memPhone,$memEmail,$RegTime);
-                echo '<script>alert("註冊成功");</script>';
-                $this->view("signin");
+                $a='註冊成功';
+    		    $b='<meta http-equiv=REFRESH CONTENT=1;url=https://lab-jennylin.c9users.io/EasyMVC/index/signin>';
+    		    $this->message($a,$b);
             }
         }
+    }
+    public function message($a,$b){
+        $this->view("message",Array($a,$b));
     }
 }
 ?>

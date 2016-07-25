@@ -44,7 +44,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="total">
 					<div class="header">
 						<div class="logo">
-							<a href=""><img src="/EasyMVC/views/images/logo.jpg" alt="" /></a>
+							<a href="index.php"><img src="/EasyMVC/views/images/logo.jpg" alt="" /></a>
 						</div>
 						<div class="clear"></div>
 					</div>
@@ -52,7 +52,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<div class="top-nav">
 							<ul>
 								<li><a href="/EasyMVC/index/home">Home</a></li>
-								<li><a href="/EasyMVC/machine/special">Specials</a></li>
+								<li><a href="special">Specials</a></li>
 								<li class="active"><a href="/EasyMVC/new/news">New</a></li>
 								<li><a href="/EasyMVC/index/contact">Contact</a></li>
 								<?php if($_SESSION['username'] == NULL){ ?>

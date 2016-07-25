@@ -20,7 +20,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<div class="header">
 						<div class="header-bot">
 							<div class="logo">
-								<a href=""><img src="/EasyMVC/views/images/logo.jpg" alt="" /></a>
+								<a href="index.html"><img src="/EasyMVC/views/images/logo.jpg" alt="" /></a>
 							</div>
 							<div class="clear"></div>
 						</div>
