@@ -1,6 +1,5 @@
-<?php  
-header('Content-Type: text/html; charset=utf-8');
-    require_once("config.php");
+<?php
+require_once("config.php");
     class member{
         public $account;
         public function __construct()

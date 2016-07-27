@@ -18,9 +18,9 @@ class indexController extends Controller {
     function login(){
         $user = $this->model("login");
         if (isset($_POST['login'])){
-            $account = $user->account = $_POST['memAccount'];
-            $password = $user->password= $_POST['memPassword'];
-            $row = $user->login_check($account);
+            $account = $_POST['memAccount'];
+            $password= $_POST['memPassword'];
+            $row = $user->login_check($account,$password);
             if($account != null && $password != null && $row[1] == $account && $row[2] == $password){
     	        	//將帳號寫入session，方便驗證使用者身份
     		        $_SESSION['username'] = $account;
@@ -49,7 +49,7 @@ class indexController extends Controller {
     //新增會員
     function memberadd(){
         $member = $this->model("member");
-        $account = $member->account = $_POST['memAccount'];
+        $account = $_POST['memAccount'];
         $row = $member->read_member($account);
     
         if (isset($_POST['add'])){

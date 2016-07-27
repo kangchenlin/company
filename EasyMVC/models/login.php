@@ -7,8 +7,8 @@ require_once("config.php");
           $db = new DB();
          }
         //判斷是否有該會員的帳號
-        function login_check($account){
-            $sql = "SELECT * from member where memAccount = '".$this->account."';";
+        function login_check($account,$password){
+            $sql = "SELECT * from member where memAccount = '".$account."' and memPassword = '".$password."';";
         	$result = mysql_query($sql);
     		return mysql_fetch_row($result);
         }
